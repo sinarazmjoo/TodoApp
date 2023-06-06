@@ -1,7 +1,7 @@
 import 'package:bloc_todo_app/core/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:intl/intl.dart';
 import '../application/add_todo/add_todo_bloc.dart';
 import '../models/todo.dart';
 
@@ -136,7 +136,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                           Row(
                             children: [
                               Text(
-                                '${state.date.year}/${state.date.month}/${state.date.day}',
+                                DateFormat.yMMMd().format(state.date),
                                 style: const TextStyle(fontSize: 19),
                               ),
                               const SizedBox(
@@ -144,7 +144,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                               ),
                               GestureDetector(
                                 onTap: () async {
-                                  final pickedDate = await showDatePicker(
+                                  DateTime? pickedDate = await showDatePicker(
                                     context: context,
                                     firstDate: DateTime.now(),
                                     initialDate: DateTime.now(),
@@ -153,7 +153,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
 
                                   bloc.add(
                                     AddTodoDateTimeChanged(
-                                      date: pickedDate!,
+                                      date: pickedDate ?? DateTime.now(),
                                     ),
                                   );
                                 },
@@ -173,7 +173,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                     Center(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 18, 109, 184),
+                          primary: const Color.fromARGB(255, 18, 109, 184),
                           shadowColor: Colors.purple, // Background color
                           onPrimary:
                               Colors.white, // Text Color (Foreground color)

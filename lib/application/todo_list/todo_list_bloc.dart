@@ -7,7 +7,7 @@ import 'package:bloc_todo_app/data/database_interface.dart';
 import 'package:bloc_todo_app/models/filter.dart';
 import 'package:bloc_todo_app/models/todo.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/scheduler.dart';
+import 'package:intl/intl.dart';
 part 'todo_list_event.dart';
 part 'todo_list_state.dart';
 
@@ -79,11 +79,8 @@ class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
 
     if (filterclass.duoDate != null && filterclass.justCompleted != null) {
       for (int i = 0; i < todos.length; i++) {
-        print(todos[i].date);
-        print(filterclass.duoDate);
-        if (todos[i].date.year == filterclass.duoDate!.year &&
-            todos[i].date.month == filterclass.duoDate!.month &&
-            todos[i].date.day == filterclass.duoDate!.day &&
+        if (DateFormat.yMd().format(todos[i].date) ==
+                DateFormat.yMd().format(filterclass.duoDate!) &&
             todos[i].isCompleted == filterclass.justCompleted) {
           filteredList.add(todos[i]);
         }

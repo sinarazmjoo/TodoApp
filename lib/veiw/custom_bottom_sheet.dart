@@ -54,7 +54,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     Row(
                       children: [
                         Text(
-                          DateFormat.yMd().format(dateTime),
+                          DateFormat.yMMMd().format(dateTime),
                           style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(

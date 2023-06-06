@@ -52,8 +52,8 @@ class HomePage extends StatelessWidget {
                       ),
                       Text(
                         state.filterclass.duoDate == null
-                            ? DateFormat.yMd().format(DateTime.now())
-                            : DateFormat.yMd().format(state.date),
+                            ? DateFormat.yMMMd().format(DateTime.now())
+                            : DateFormat.yMMMd().format(state.date),
                         style: const TextStyle(fontSize: 19),
                       ),
                       GestureDetector(

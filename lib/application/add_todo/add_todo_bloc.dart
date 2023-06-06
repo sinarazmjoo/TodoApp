@@ -72,7 +72,7 @@ class AddTodoBloc extends Bloc<AddTodoEvent, AddTodoState> {
       date: currentState.date,
     );
     await database.create<Todo>(todo);
-    print(todo);
+
     emit(AddTodoSuccessfully());
   }
 
