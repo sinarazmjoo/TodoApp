@@ -144,7 +144,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                               ),
                               GestureDetector(
                                 onTap: () async {
-                                  DateTime? pickedDate = await showDatePicker(
+                                  final pickedDate = await showDatePicker(
                                     context: context,
                                     firstDate: DateTime.now(),
                                     initialDate: DateTime.now(),
