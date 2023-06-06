@@ -1,6 +1,7 @@
-import 'package:bloc_todo_app/models/filter_class.dart';
+import 'package:bloc_todo_app/models/filter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class FilterBottomSheet extends StatefulWidget {
   const FilterBottomSheet({
@@ -53,7 +54,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     Row(
                       children: [
                         Text(
-                          '${dateTime.year}/${dateTime.month}/${dateTime.day}',
+                          DateFormat.yMd().format(dateTime),
                           style: const TextStyle(fontSize: 20),
                         ),
                         const SizedBox(
