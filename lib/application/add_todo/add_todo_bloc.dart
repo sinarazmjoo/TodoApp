@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:bloc/bloc.dart';
-import 'package:bloc_todo_app/enitities/database_interface.dart';
+import 'package:bloc_todo_app/data/database_interface.dart';
 import 'package:flutter/cupertino.dart';
 // ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';

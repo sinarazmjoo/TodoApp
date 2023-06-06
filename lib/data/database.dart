@@ -1,16 +1,15 @@
-import 'package:bloc_todo_app/enitities/database_interface.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'package:bloc_todo_app/models/todo.dart';
 import 'package:isar/isar.dart';
 
+import 'database_interface.dart';
+
 class Database implements IDatabase {
   late Future<Isar> db;
-
   Database() {
     db = openDB();
   }
-
   Future<Isar> openDB() async {
     final dir = await getApplicationDocumentsDirectory();
     if (Isar.instanceNames.isEmpty) {

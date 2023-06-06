@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:bloc_todo_app/enitities/database_interface.dart';
+import 'package:bloc_todo_app/data/database_interface.dart';
 import 'package:bloc_todo_app/models/filter_class.dart';
 import 'package:bloc_todo_app/models/todo.dart';
 import 'package:flutter/foundation.dart';

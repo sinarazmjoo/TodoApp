@@ -1,7 +1,8 @@
 import 'package:bloc_todo_app/application/add_todo/add_todo_bloc.dart';
 import 'package:bloc_todo_app/application/todo_list/todo_list_bloc.dart';
-import 'package:bloc_todo_app/enitities/database.dart';
-import 'package:bloc_todo_app/enitities/database_interface.dart';
+import 'package:bloc_todo_app/data/database.dart';
+import 'package:bloc_todo_app/data/database_interface.dart';
+
 import 'package:bloc_todo_app/models/todo.dart';
 import 'package:get_it/get_it.dart';
 
