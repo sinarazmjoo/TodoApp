@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_todo_app/application/todo_list/todo_list_bloc.dart';
 import 'package:bloc_todo_app/veiw/add_todo_page.dart';
+import 'package:intl/intl.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -51,8 +52,8 @@ class HomePage extends StatelessWidget {
                       ),
                       Text(
                         state.filterclass.duoDate == null
-                            ? '${DateTime.now().year}/${DateTime.now().month}/${DateTime.now().day}'
-                            : '${state.filterclass.duoDate!.year}/${state.filterclass.duoDate!.month}/${state.filterclass.duoDate!.day}',
+                            ? DateFormat.yMd().format(DateTime.now())
+                            : DateFormat.yMd().format(state.date),
                         style: const TextStyle(fontSize: 19),
                       ),
                       GestureDetector(

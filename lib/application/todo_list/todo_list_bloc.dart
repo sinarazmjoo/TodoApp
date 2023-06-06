@@ -35,7 +35,6 @@ class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
     ));
   }
 
-////////////////////////////////////////////////////////////////
   void _deleteTodo(
     DeleteTodo event,
     Emitter<TodoListState> emit,
@@ -54,7 +53,6 @@ class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
     );
   }
 
-////////////////////////////////////////////////////////////////
   void _completeCheck(
       CheckForComplete event, Emitter<TodoListState> emit) async {
     final currentState = state as TodoListLoaded;
@@ -74,8 +72,6 @@ class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
       ),
     );
   }
-
-////////////////////////////////////////////////////////////////
 
   Future<List<Todo>> filterMethod(FilterClass filterclass) async {
     final todos = await getTaskFromDB();
@@ -99,8 +95,6 @@ class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
     return filteredList;
   }
 
-////////////////////////////////////////////////////////////////
-
   void _upDateFilter(
     FilterClassChanged event,
     Emitter<TodoListState> emit,
@@ -118,13 +112,9 @@ class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
     );
   }
 
-  ////////////////////////////////////////////////////////////////
-
   Future<List<Todo>> getTaskFromDB() async {
     return await database.readAll<Todo>();
   }
-
-////////////////////////////////////////////////////////////////
 
   void _todoModify(TodoModify event, Emitter<TodoListState> emit) async {
     final currentState = state as TodoListLoaded;
